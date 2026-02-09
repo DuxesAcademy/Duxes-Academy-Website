@@ -42,6 +42,8 @@ import LowWirelessPage from '@/pages/LowWirelessPage';
 import EmbeddedMLPage from '@/pages/EmbeddedMLPage';
 import EmbeddedProductPage from '@/pages/EmbeddedProductPage';
 import EmbeddedInternship from '@/pages/EmbeddedInternship';
+import EmbeddedAerospacePage from '@/pages/EmbeddedAerospacePage';
+
 function App() {
   return (
     <Router>
@@ -88,6 +90,7 @@ function App() {
           <Route path="/emledgeai" element={<EmbeddedMLPage />} />
           <Route path="/embeddedproduct" element={<EmbeddedProductPage />} />
           <Route path="/embeddedinternship" element={<EmbeddedInternship />} />
+           <Route path="/embeddedaerospace" element={<EmbeddedAerospacePage />} /> 
         </Routes>
       </Layout>
       <Toaster />

@@ -44,11 +44,43 @@ const internships =
   }
 ]
 
+
 // COURSES data
 const courses = [
-
-  {
+ {
     id: 0,
+    title: " Embedded Aerospace Development & Testing",
+    path: "/embeddedaerospace",
+    imageUrl: "/images/embeddedaerospace.jpeg",
+    imageAlt: "Embedded System Development",
+    description:
+      "The course blends core embedded systems, aerospace standards, and live, certification-oriented projects, preparing participants for roles in avionics and safety-critical software teams.",
+    status: "Completed",
+    reviews: 2850,
+    price: 40000,
+    originalPrice: 50000,
+    team: [
+      {
+        img: "/images/jeevan.jpeg",
+        linkedin:
+          "https://www.linkedin.com/in/jeevan-r-m-504a70355?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      },
+      {
+        img: "/images/ayesha.jpeg",
+        linkedin:
+          "https://www.linkedin.com/in/ayeshafirdous786?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+      },
+      {
+        img: "/images/varun.jpg",
+        linkedin:
+          "https://www.linkedin.com/in/varun-j-t-8b3a571b6?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bm6dv0Xt9SSqrRuWPi%2BROtg%3D%3D",
+      },
+    ],
+  },
+
+   
+  {
+    id: 1,
     title: "Embedded Product Development Bootcamp",
     path: "/embeddedproduct",
     imageUrl: "/images/embeddedproductdevelopmentbootcamp.jpeg",
@@ -80,7 +112,7 @@ const courses = [
 
 
   {
-    id: 1,
+    id: 2,
     title: "Embedded System Development (Generic, IoT, Automotive)",
     path: "/embeddedsystem",
     imageUrl: "/images/embeddedsystem2.png",
@@ -111,7 +143,7 @@ const courses = [
   },
 
   {
-    id: 2,
+    id: 3,
     title: " IoT & Consumer Electronics Design",
     path: "/iot",
     imageUrl:
@@ -137,7 +169,7 @@ const courses = [
   },
 
   {
-    id: 3,
+    id: 4,
     title: "Linux & Real-Time Operating Systems for Embedded",
     path: "/linuxrtos",
     imageUrl:
@@ -164,7 +196,7 @@ const courses = [
   },
 
   {
-    id: 4,
+    id: 5,
     title: "Automotive Embedded Development",
     path: "/automotive",
     imageUrl:
@@ -191,7 +223,7 @@ const courses = [
   },
 
   {
-    id: 5,
+    id: 6,
     title: "Low-Power Design & Wireless Systems",
     path: "/lpdws",
     imageUrl: "/images/lpd.png",
@@ -217,7 +249,7 @@ const courses = [
   },
 
   {
-    id: 6,
+    id: 7,
     title: "Embedded Machine Learning & Edge AI",
     path: "/emledgeai",
     imageUrl:
@@ -1148,7 +1180,7 @@ const HomePage = () => {
       <section
       id="courses"
       className="w-full py-16 slide-in-up scroll-mt-40 md:scroll-mt-64">
-      <div className="-mt-52 bg-[#FAFAFA] py-10 md:py-26 md:h-[2150px] container">
+      <div className="-mt-52 bg-[#FAFAFA] py-10 md:py-26 md:h-[2350px] container">
         {/* STATE */}
         {/*
           Modal state must live inside section
@@ -1295,7 +1327,7 @@ const HomePage = () => {
                     <Card className="w-[360px] bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-gray-200">
                       {/* IMAGE */}
                       <img
-                        className="w-full h-[310px] object-fill"
+                        className="w-full h-[370px] object-fill"
                         alt={course.imageAlt}
                         src={course.imageUrl}
                       />
