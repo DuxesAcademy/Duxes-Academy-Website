@@ -1,0 +1,52 @@
+<ul className="two-col-list">
+  <li className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+
+  <rect x="4" y="4" width="40" height="40" rx="6" ry="6"
+        stroke="#10899A" stroke-width="2" fill="none" stroke-linejoin="round"/>
+  <path d="M18 14 L30 14" stroke="#10899A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M30 14 L30 22" stroke="#10899A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M30 22 L22 30" stroke="#10899A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M22 30 L22 34" stroke="#10899A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <circle cx="18" cy="14" r="2.6" fill="#10899A" stroke="#10899A" stroke-width="0"/>
+  <circle cx="30" cy="14" r="2.6" fill="#10899A" stroke="#10899A" stroke-width="0"/>
+  <circle cx="30" cy="22" r="2.6" fill="#10899A" stroke="#10899A" stroke-width="0"/>
+  <circle cx="22" cy="34" r="2.6" fill="#10899A" stroke="#10899A" stroke-width="0"/>
+</svg>
+Understand MCU architecture & peripherals.</li>
+
+  <li className="flex items-center gap-2">
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 15.6C13.9882 15.6 15.6 13.9882 15.6 12C15.6 10.0118 13.9882 8.39999 12 8.39999C10.0118 8.39999 8.39999 10.0118 8.39999 12C8.39999 13.9882 10.0118 15.6 12 15.6Z"
+        stroke="#10899A"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M19.4 12.0001C19.4 12.6401 19.34 13.2601 19.23 13.8601L21.27 15.4201C21.45 15.5601 21.5 15.8201 21.39 16.0301L19.39 19.9701C19.28 20.1801 19.03 20.2601 18.82 20.1801L16.37 19.2001C15.67 19.7001 14.89 20.1001 14.05 20.3601L13.65 22.9001C13.62 23.1301 13.42 23.3001 13.19 23.3001H10.81C10.58 23.3001 10.38 23.1301 10.35 22.9001L9.94999 20.3601C9.10999 20.1001 8.32999 19.7001 7.62999 19.2001L5.17999 20.1801C4.96999 20.2601 4.71999 20.1801 4.59999 19.9701L2.59999 16.0301C2.47999 15.8201 2.53999 15.5601 2.71999 15.4201L4.75999 13.8601C4.65999 13.2601 4.59999 12.6401 4.59999 12.0001C4.59999 11.3601 4.65999 10.7401 4.75999 10.1401L2.71999 8.58006C2.53999 8.44006 2.48999 8.18006 2.59999 7.97006L4.59999 4.03006C4.71999 3.82006 4.96999 3.74006 5.17999 3.82006L7.62999 4.80006C8.32999 4.30006 9.10999 3.90006 9.94999 3.64006L10.35 1.10006C10.38 0.870063 10.58 0.700063 10.81 0.700062H13.19C13.42 0.700062 13.62 0.870063 13.65 1.10006L14.05 3.64006C14.89 3.90006 15.67 4.30006 16.37 4.80006L18.82 3.82006C19.03 3.74006 19.28 3.82006 19.39 4.03006L21.39 7.97006C21.5 8.18006 21.45 8.44006 21.27 8.58006L19.23 10.1401C19.34 10.7401 19.4 11.3601 19.4 12.0001Z"
+        stroke="#10899A"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+     Interface sensors/actuators using GPIO, ADC, UART, SPI, I²C.
+      </li>
+
+          <li className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
+          <path d="M20 12 L8 24 L20 36"
+                fill="none" stroke="#10899A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M28 12 L40 24 L28 36"
+                fill="none" stroke="#10899A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+           Write clean embedded C code using SDKs.</li>
+          <li>Use debugging tools like JTAG/SWD.</li>
+        </ul>
