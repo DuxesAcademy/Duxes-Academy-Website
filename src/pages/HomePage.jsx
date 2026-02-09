@@ -1121,27 +1121,26 @@ const HomePage = () => {
 
 
 
-{/* --- Dot Indicators --- */}
-<div className="absolute md:bottom-44 bottom-24 left-1/2 transform -translate-x-1/2 flex gap-2">
-  {images.map((_, index) => (
-    <div
-      key={index}
-      className={`w-3 h-3 rounded-full transition-all duration-300 ${
-        currentImage === index
-          ? "bg-[#DE5769] scale-110"
-          : "bg-gray-300"
-      }`}
-    ></div>
-  ))}
-</div>
-
-        
-      <br /> <br />
+      {/* --- Dot Indicators --- */}
+      <div className="absolute md:bottom-44 bottom-24 left-1/2 transform -translate-x-1/2 flex gap-2">
+        {images.map((_, index) => (
+          <div
+            key={index}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              currentImage === index
+                ? "bg-[#DE5769] scale-110"
+                : "bg-gray-300"
+            }`}
+          ></div>
+        ))}
+       </div>
+ 
+       <br /> <br />
          <div className="md:mt-12 mt-2 bg-[#10899A] py-2 md:py-2 w-full">
         <div className="flex justify-center items-center md:gap-80 gap-4 flex-wrap md:text-lg font-semibold -mt-2">
         </div>
         </div>
-      </motion.section>
+       </motion.section>
 
 
 
@@ -1488,13 +1487,13 @@ const HomePage = () => {
                       href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
                         `Hello Duxes Academy 👋
 
-I would like to register for the course:
-📘 *${selectedCourse?.title}*
+                        I would like to register for the course:
+                        📘 *${selectedCourse?.title}*
 
-I have completed the payment via UPI.
-Please guide me with the next steps.
+                        I have completed the payment via UPI.
+                        Please guide me with the next steps.
 
-Thank you.`
+                        Thank you.`
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -1595,10 +1594,7 @@ Thank you.`
             setSubmitting(true);
 
             try {
-              // Important CORS fix:
-              // Make the POST a "simple request" so the browser won't send a preflight OPTIONS.
-              // To do that, send form-encoded data (application/x-www-form-urlencoded) and DO NOT set custom headers.
-              // Apps Script doPost will receive form data in e.parameter.
+              
               const params = new URLSearchParams();
               params.append("name", name.trim());
               params.append("phone", phone.trim());
@@ -1608,17 +1604,12 @@ Thank you.`
               params.append("timestamp", new Date().toISOString());
               if (SHEET_SECRET) params.append("secret", SHEET_SECRET);
 
-              // Do not set 'Content-Type' header here. Fetch will set it to
-              // application/x-www-form-urlencoded which qualifies as a simple request (no preflight).
+              
               const res = await fetch(SHEET_ENDPOINT, {
                 method: "POST",
                 body: params,
-                // mode: "cors" is default; no custom headers allowed for simple request
               });
 
-              // Note: when sending a simple request to Apps Script exec URL (Anyone, even anonymous),
-              // the response will generally be OK. Apps Script web apps don't allow custom response headers,
-              // but a simple POST avoids the preflight and will succeed.
               if (!res.ok) {
                 // Attempt to read response text for more info
                 const text = await res.text().catch(() => "");
@@ -1855,13 +1846,13 @@ Thank you.`
                       href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
                         `Hello Duxes Academy 👋
 
-I would like to register for the course:
-📘 *${selectedCourse?.title}*
+                          I would like to register for the course:
+                          📘 *${selectedCourse?.title}*
 
-I have completed the payment via UPI.
-Please guide me with the next steps.
+                          I have completed the payment via UPI.
+                          Please guide me with the next steps.
 
-Thank you.`
+                          Thank you.`
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -2204,8 +2195,6 @@ Thank you.`
       </div>
     </section>
 
-
-      
 
     
       {/* Community Section */}
