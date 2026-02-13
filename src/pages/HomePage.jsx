@@ -281,8 +281,31 @@ const courses = [
 
 // Ongoing Projects data
 const popularCourses = [
+
   {
     id: 1,
+    path: "/smokedetection",
+    title: "Flight Cabin Smoke detection System",
+    imageUrl: "/images/smokedetection.png",
+    imageAlt: "Flight Cabin Smoke detection System",
+    description:
+      "An embedded system designed to detect smoke in aircraft cabins using advanced sensors and real-time processing, enhancing passenger safety.",
+    status: "Completed",
+    team: [
+      {
+        img: "/images/raju.jpeg",
+        linkedin: "https://www.linkedin.com/in/raju-chaluva",
+      },
+      {
+        img: "/images/jeevan.jpeg",
+        linkedin: "https://www.linkedin.com/in/jeevan-r-m-504a70355?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      },
+      
+    ],
+  },
+
+  {
+    id: 2,
     path: "/frost",
     title: "FROST – Smart Hydration Reminder System",
     imageUrl: "/images/frost.svg",
@@ -306,7 +329,7 @@ const popularCourses = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "Automated Storage Tower",
     path: "/autostore",
     imageUrl: "/images/autostore.jpeg",
@@ -327,7 +350,7 @@ const popularCourses = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "Bio-Medical Surgical Glove Pinhole Detection System",
     path: "/biomedical",
     imageUrl: "/images/biomedical.png",
@@ -349,7 +372,7 @@ const popularCourses = [
   },
 
   {
-    id: 4,
+    id: 5,
     title: "Virtual Lab – Remote Hardware Access Platform",
     path: "/virtuallab",
     imageUrl: "/images/virtuallab1.png",
@@ -371,7 +394,7 @@ const popularCourses = [
   },
 
   {
-    id: 5,
+    id: 6,
     title: "Smart Breadboard",
     path: "/smartbreadboard",
     imageUrl: "/images/smartbreadboard.png",
@@ -393,7 +416,7 @@ const popularCourses = [
   },
 
   {
-    id: 6,
+    id: 7,
     title: "ROBOL – Kids Programmable Robot (“RORA”)",
     path: "/robokid",
     imageUrl: "/images/robol1.png",
@@ -415,7 +438,7 @@ const popularCourses = [
   },
 
   {
-    id: 7,
+    id: 8,
     title: "Industrial Water / Chemical Level Monitor & Controller",
     path: "/industrialmonitor",
     imageUrl: "/images/industrialmonitor.jpg",
@@ -440,7 +463,7 @@ const popularCourses = [
   },
 
   {
-    id: 8,
+    id: 9,
     title: "Contactless Water Level Indicator / Controller",
     path: "/contactless",
     imageUrl: "/images/contactless.jpg",
@@ -465,7 +488,7 @@ const popularCourses = [
   },
 
   {
-    id: 9,
+    id: 10,
     title: "Prostir – Smart Laboratory Stirrer",
     path: "/prostir",
     imageUrl: "/images/prostir.jpg",
@@ -1973,7 +1996,7 @@ const HomePage = () => {
       id="running-project"
       className="w-full py-28 slide-in-up scroll-mt-20 md:scroll-mt-40"
      >
-      <div className="-mt-48 bg-[#FAFAFA] py-10 md:py-14 md:h-[2150px] container">
+      <div className="-mt-48 bg-[#FAFAFA] py-10 md:py-14 md:h-[2750px] container">
         {/* Heading */}
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">
           Ongoing Projects by Duxes Learners

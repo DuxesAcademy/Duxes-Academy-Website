@@ -43,6 +43,7 @@ import EmbeddedMLPage from '@/pages/EmbeddedMLPage';
 import EmbeddedProductPage from '@/pages/EmbeddedProductPage';
 import EmbeddedInternship from '@/pages/EmbeddedInternship';
 import EmbeddedAerospacePage from '@/pages/EmbeddedAerospacePage';
+import SmokeDetectionPage from '@/pages/SmokeDetectionPage';
 
 function App() {
   return (
@@ -91,6 +92,7 @@ function App() {
           <Route path="/embeddedproduct" element={<EmbeddedProductPage />} />
           <Route path="/embeddedinternship" element={<EmbeddedInternship />} />
            <Route path="/embeddedaerospace" element={<EmbeddedAerospacePage />} /> 
+          <Route path="/smokedetection" element={<SmokeDetectionPage />} />
         </Routes>
       </Layout>
       <Toaster />
