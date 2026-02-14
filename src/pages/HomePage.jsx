@@ -375,7 +375,7 @@ const popularCourses = [
     id: 5,
     title: "Virtual Lab – Remote Hardware Access Platform",
     path: "/virtuallab",
-    imageUrl: "/images/virtuallab1.png",
+    imageUrl: "/images/virtuallab2.jpeg",
     imageAlt: "Virtual Lab Platform",
     description:
       "A cloud-connected embedded experimentation platform that allows users to access, program, and monitor real hardware setups remotely .",
@@ -1224,7 +1224,7 @@ const HomePage = () => {
 
        
           const SHEET_ENDPOINT =
-            "https://script.google.com/macros/s/AKfycbwvrIFyxt30ZUp1dZCEgT_dbgYdqJerlk5-vAkrd7oLboi6BX5wEG_BMomoLcTkhtu8/exec";
+            "https://script.google.com/macros/s/AKfycbzKk2IZDtLAqDAqW0VBrW9TlNPuJeZtxJyUchjaP8oEMSlyudq3EUNyFEAMfKto2lgUXQ/exec";
 
           // If you set a SECRET_TOKEN in the Apps Script, put the same value here.
           // If you didn't set one, leave as an empty string.

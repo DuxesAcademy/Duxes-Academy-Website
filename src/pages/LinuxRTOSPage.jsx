@@ -15,7 +15,7 @@ const EmbeddedCourse = () => {
   const [submitting, setSubmitting] = useState(false);
 
   const SHEET_ENDPOINT =
-    "https://script.google.com/macros/s/AKfycbwvrIFyxt30ZUp1dZCEgT_dbgYdqJerlk5-vAkrd7oLboi6BX5wEG_BMomoLcTkhtu8/exec";
+    "https://script.google.com/macros/s/AKfycbzKk2IZDtLAqDAqW0VBrW9TlNPuJeZtxJyUchjaP8oEMSlyudq3EUNyFEAMfKto2lgUXQ/exec";
 
   // If you set a SECRET_TOKEN in the Apps Script, put the same value here.
   // If you didn't set one, leave as an empty string.
