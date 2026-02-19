@@ -286,7 +286,7 @@ const popularCourses = [
     id: 1,
     path: "/smokedetection",
     title: "Flight Cabin Smoke detection System",
-    imageUrl: "/images/smokedetection.png",
+    imageUrl: "/images/smokedetection1.png",
     imageAlt: "Flight Cabin Smoke detection System",
     description:
       "An embedded system designed to detect smoke in aircraft cabins using advanced sensors and real-time processing, enhancing passenger safety.",
@@ -1994,7 +1994,7 @@ const HomePage = () => {
       {/* Ongoing Projects Section */}
       <section
       id="running-project"
-      className="w-full py-28 slide-in-up scroll-mt-20 md:scroll-mt-40"
+      className="w-full py-28 slide-in-up scroll-mt-28 md:scroll-mt-44"
      >
       <div className="-mt-48 bg-[#FAFAFA] py-10 md:py-14 md:h-[2750px] container">
         {/* Heading */}
@@ -2254,7 +2254,7 @@ const HomePage = () => {
     
       {/* Community Section */}
       <section id="community"
-      className="w-full py-0 bg-white font-['Roboto'] scroll-mt-20 md:scroll-mt-58">
+      className="w-full py-0 bg-white font-['Roboto'] scroll-mt-10 md:scroll-mt-58">
        <div className="-mt-24 bg-[#FAFAFA] h-[530px] py-10 md:py-20 max-w-7xl mx-auto px-6 text-center">
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
