@@ -595,6 +595,54 @@ const toolsData = {
   ],
 };
 
+{/* Blogs Data section */}
+const blogData = [
+  {
+    id: 1,
+    title: "How Virtual Labs Are Transforming Embedded Systems Education",
+    description:
+      "Traditional embedded systems education often struggles with hardware availability and infrastructure cost...",
+    imageUrl: "/images/blog1.png",
+    imageAlt: "Virtual Labs",
+    path: "/blogs/virtual-labs"
+  },
+  {
+    id: 2,
+    title: "What is an Embedded System? A Beginner’s Guide",
+    description:
+      "We interact with embedded systems every day, often without realizing it...",
+    imageUrl: "/images/blog2.png",
+    imageAlt: "Embedded System",
+    path: "/blogs/embedded-system"
+  },
+  {
+    id: 3,
+    title: "Microcontroller vs Microprocessor: Understanding the Difference",
+    description:
+      "Many beginners confuse microcontrollers and microprocessors...",
+    imageUrl: "/images/blog3.png",
+    imageAlt: "Microcontroller vs Microprocessor",
+    path: "/blogs/microcontroller-vs-microprocessor"
+  },
+  {
+    id: 4,
+    title: "How Sensors Work in Embedded Systems",
+    description:
+      "Embedded systems interact with the real world using sensors. Sensors allow devices to measure environmental conditions and respond intelligently. But how do they actually work?",
+    imageUrl: "/images/blog4.png",
+    imageAlt: "Sensors in Embedded Systems",
+    path: "/blogs/how-sensors-work"
+  },
+  {
+    id: 5,
+    title: "What is Firmware? How Software Controls Hardware",
+    description:
+      "Firmware is the invisible intelligence inside embedded systems. Without firmware, hardware is just electronic components.",
+    imageUrl: "/images/blog5.png",
+    imageAlt: "Firmware in Embedded Systems",
+    path: "/blogs/what-is-firmware"
+  }
+];
 
 
 // Workshops data
@@ -734,6 +782,7 @@ const testimonials = [
 const HomePage = () => {
   const [activeTab, setActiveTab] = useState("tools");
   const [currentImage, setCurrentImage] = useState(0);
+  const [currentBlogSlide, setCurrentBlogSlide] = useState(0);
 
   // ---- Image rotation setup ----
   const images = [
@@ -2367,8 +2416,94 @@ const HomePage = () => {
     </div>
   </div>
 </section>
-
   
+  {/* Blog Section */}
+<section
+  id="blogs"
+  className="w-full py-28 slide-in-up scroll-mt-52 md:scroll-mt-56"
+>
+  <div className="bg-[#FAFAFA] py-10 -mt-64 container mx-auto md:py-14 container lg:-mt-64">
+
+    {/* Heading */}
+    <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">
+      Duxes Academy Blogs
+    </h2>
+    <p className="text-center text-sm md:text-base text-[#000000] mb-12">
+      See the innovation in action. Our students are building real-world
+      solutions every day.
+    </p>
+
+    {/* Blog Cards Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      {blogData
+        .slice(currentBlogSlide * 3, currentBlogSlide * 3 + 3)
+        .map((blog, index) => (
+          <motion.div
+            key={blog.id}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex justify-center"
+          >
+            <Card className="w-[370px] bg-white rounded-xl overflow-hidden flex flex-col shadow-sm hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+
+              {/* Image */}
+              <div className="relative">
+                <img
+                  className="w-full h-[280px] object-fill"
+                  alt={blog.imageAlt}
+                  src={blog.imageUrl}
+                />
+              </div>
+
+              {/* Content */}
+              <CardHeader className="px-5 pt-4 pb-2">
+                <CardTitle className="text-lg font-semibold leading-tight text-[#000000]">
+                  {blog.title}
+                </CardTitle>
+              </CardHeader>
+
+              <CardContent className="px-5 pb-6 flex-grow flex flex-col">
+                <p className="text-sm text-[#10899A] font-medium mb-2">
+                  Introduction
+                </p>
+
+                <p className="text-sm text-[#000000] mb-6 leading-relaxed">
+                  {blog.description}
+                </p>
+
+                <div className="flex justify-center mt-auto">
+                  <Button
+                    asChild
+                    className="bg-[#DE5769] hover:bg-[#007080] text-white text-sm font-medium px-4 py-2 rounded-md"
+                  >
+                    <Link to={blog.path}>Read More</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        ))}
+    </div>
+
+    {/* Dots */}
+<div className="flex justify-center items-center mt-10 space-x-3">
+  {[...Array(Math.ceil(blogData.length / 3))].map((_, index) => (
+    <div
+      key={index}
+      onClick={() => setCurrentBlogSlide(index)}
+      className={`cursor-pointer transition-all duration-300 rounded-full ${
+        currentBlogSlide === index
+          ? "bg-[#10899A] w-10 h-3"
+          : "bg-[#10899A] w-3 h-3 opacity-60"
+      }`}
+    />
+  ))}
+</div>
+
+  </div>
+</section>
       {/* Testimonials Section 
       <section className="container slide-in-up">
         <h2 className="text-3xl font-bold text-center mb-10">What Our Students Say</h2>

@@ -56,7 +56,7 @@ function App() {
           <Route path="/courses" element={<CoursesPage />} />
           <Route path="/faculty" element={<FacultyPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blogs/:slug" element={<BlogPage />} />
           <Route path="/faqs" element={<FaqsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/gallery" element={<GalleryPage />} />

@@ -47,29 +47,26 @@ const Header = () => {
   };
 
   const handleNavigation = (id) => {
-    if (location.pathname !== "/") {
-      navigate("/", { state: { scrollTo: id } });
-    } else {
+  if (location.pathname !== "/") {
+    navigate("/");
+    setTimeout(() => {
       const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
+    }, 100);
+  } else {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
-    setAboutOpen(false);
-    setMobileAboutOpen(false);
-    setMobileMenuOpen(false); // close mobile menu when navigating
-  };
+  }
 
-  useEffect(() => {
-    if (location.state?.scrollTo) {
-      const element = document.getElementById(location.state.scrollTo);
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: "smooth" });
-        }, 300);
-      }
-    }
-  }, [location]);
+  setAboutOpen(false);
+  setMobileAboutOpen(false);
+  setMobileMenuOpen(false);
+};
+
 
   const renderUserMenu = () => (
     <DropdownMenu>
@@ -161,7 +158,7 @@ const Header = () => {
 
               <div className={`absolute left-1/2 -translate-x-1/2 mt-3 w-56 bg-white text-black rounded-xl shadow-xl py-3 transition-all duration-300
                 ${aboutOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-3 invisible"}`}>
-                {["workflow","why-us","community","tools-tech"].map((id, index) => (
+                {["workflow","why-us","community","tools-tech","blogs"].map((id, index) => (
                   <button
                     key={index}
                     onClick={() => handleNavigation(id)}
@@ -169,6 +166,7 @@ const Header = () => {
                   >
                     {id === "tools-tech" ? "Tools & Technology" :
                      id === "why-us" ? "Why Us" :
+                     id === "blogs" ? "Blogs" :
                      id.charAt(0).toUpperCase() + id.slice(1)}
                   </button>
                 ))}
@@ -228,7 +226,7 @@ const Header = () => {
                 <div
                   className={`overflow-hidden transition-all duration-300 ease-in-out ${mobileAboutOpen ? "max-h-60 opacity-100 mt-2" : "max-h-0 opacity-0"}`}
                 >
-                  {["workflow","why-us","community","tools-tech"].map((id, index) => (
+                  {["workflow","why-us","community","tools-tech","blogs"].map((id, index) => (
                     <button
                       key={index}
                       onClick={() => handleNavigation(id)}
@@ -236,6 +234,7 @@ const Header = () => {
                     >
                       {id === "tools-tech" ? "Tools & Technology" :
                        id === "why-us" ? "Why Us" :
+                       id === "blogs" ? "Blogs" :
                        id.charAt(0).toUpperCase() + id.slice(1)}
                     </button>
                   ))}
