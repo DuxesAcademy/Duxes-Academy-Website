@@ -7,6 +7,9 @@ const BlogPage = () => {
   const navigate = useNavigate();
 
   const blogContent = {
+
+     /* ===== Blog 1: Virtual Labs ===== */
+
     "virtual-labs": {
   title: "How Virtual Labs Are Transforming Embedded Systems Education",
   content: (
@@ -157,6 +160,9 @@ const BlogPage = () => {
     </>
   )
 },
+
+/* ===== Blog 2: Embedded Systems ===== */
+
     "embedded-system": {
   title: "What is an Embedded System? A Beginner’s Guide",
   content: (
@@ -267,6 +273,9 @@ const BlogPage = () => {
     </>
   )
 },
+
+/* ===== Blog 3: microcontroller-vs-microprocessor ===== */
+
     "microcontroller-vs-microprocessor": {
   title: "Microcontroller vs Microprocessor: Understanding the Difference",
   content: (
@@ -434,6 +443,9 @@ const BlogPage = () => {
     </>
   )
 },
+
+/* ===== Blog 4: How Sensors Work ===== */
+
     "how-sensors-work": {
   title: "How Sensors Work in Embedded Systems",
   content: (
@@ -576,6 +588,9 @@ const BlogPage = () => {
     </>
   )
 },
+
+/* ===== Blog 5: what-is-firmware ===== */ 
+
    "what-is-firmware": {
   title: "What is Firmware? How Software Controls Hardware",
   content: (
