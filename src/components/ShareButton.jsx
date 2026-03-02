@@ -124,9 +124,9 @@ const ShareButton = () => {
       <button
         onMouseEnter={handleOpen}
         onMouseLeave={handleClose}
-        className="bg-[#DE5769] w-11 h-11 rounded-full shadow-xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300"
+        className="bg-[#DE5769] w-12 h-12 rounded-full shadow-xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300"
       >
-        <FaShareAlt size={15} />
+        <FaShareAlt size={22} />
       </button>
     </div>
   );
