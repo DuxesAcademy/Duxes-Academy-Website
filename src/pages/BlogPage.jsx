@@ -1,6 +1,8 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import { Helmet } from "react-helmet-async";
+import ShareButton from "../components/ShareButton";
 
 const BlogPage = () => {
   const { slug } = useParams();
@@ -12,6 +14,8 @@ const BlogPage = () => {
 
     "virtual-labs": {
   title: "How Virtual Labs Are Transforming Embedded Systems Education",
+  description: "Discover how Virtual Labs enable remote firmware execution, real hardware access, and scalable embedded systems education.",
+  image: "https://duxesacademy.com/images/blog1-2.jpeg",
   content: (
     <>
       {/* Introduction */}
@@ -165,6 +169,8 @@ const BlogPage = () => {
 
     "embedded-system": {
   title: "What is an Embedded System? A Beginner’s Guide",
+  description: "Learn the fundamentals of embedded systems including microcontrollers, sensors, firmware, and real-world applications.",
+  image: "https://duxesacademy.com/images/blog2-3.png",
   content: (
     <>
 
@@ -278,6 +284,8 @@ const BlogPage = () => {
 
     "microcontroller-vs-microprocessor": {
   title: "Microcontroller vs Microprocessor: Understanding the Difference",
+  description: "Understand the key architectural and functional differences between microcontrollers and microprocessors in embedded systems.",
+  image: "https://duxesacademy.com/images/blog3-2.jpg",
   content: (
     <>
       {/* Introduction */}
@@ -448,6 +456,8 @@ const BlogPage = () => {
 
     "how-sensors-work": {
   title: "How Sensors Work in Embedded Systems",
+  description: "Explore how sensors convert physical parameters into electrical signals and enable intelligent decision-making in embedded systems.",
+  image: "https://duxesacademy.com/images/blog4-1.jpg",
   content: (
     <>
       {/* Introduction */}
@@ -593,6 +603,8 @@ const BlogPage = () => {
 
    "what-is-firmware": {
   title: "What is Firmware? How Software Controls Hardware",
+  description: "Understand how firmware controls microcontrollers, manages hardware resources, and powers embedded system intelligence.",
+  image: "https://duxesacademy.com/images/blog5-2.jpg",
   content: (
     <>
       {/* Introduction */}
@@ -749,7 +761,19 @@ const BlogPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white font-['Roboto']">
+  <div className="min-h-screen bg-white font-['Roboto'] relative">
+    <Helmet>
+  <title>{blog.title}</title>
+
+  <meta property="og:title" content={blog.title} />
+  <meta property="og:description" content={blog.description} />
+  <meta property="og:image" content={blog.image} />
+  <meta property="og:url" content={window.location.href} />
+  <meta property="og:type" content="article" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+</Helmet>
+    <ShareButton />
 
       <div className="container mx-auto px-6 pt-8">
         <button

@@ -190,7 +190,7 @@ export default defineConfig(({ mode }) => {
 	const isDev = mode === 'development';
 
 	return {
-		base: './', // Required for static hosting like GoDaddy
+		base: '/', // Required for static hosting like GoDaddy
 
 		plugins: [react(), addTransformIndexHtml],
 
