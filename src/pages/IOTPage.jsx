@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FiCopy } from "react-icons/fi";
-
+import ShareButton from "../components/ShareButton";
 const EmbeddedCourse = () => {
   // Registration & modal state
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -265,7 +265,8 @@ const EmbeddedCourse = () => {
       `}</style>
 
       {/* ------------------ PAGE CONTENT --------------------- */}
-      <div>
+      <div className="relative">
+      <ShareButton />
         {/* Banner Section */}
         <section className="section-container justify-center text-center">
           <div className="lg:-mt-16 -mt-10">
