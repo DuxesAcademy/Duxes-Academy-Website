@@ -44,6 +44,8 @@ import EmbeddedProductPage from '@/pages/EmbeddedProductPage';
 import EmbeddedInternship from '@/pages/EmbeddedInternship';
 import EmbeddedAerospacePage from '@/pages/EmbeddedAerospacePage';
 import SmokeDetectionPage from '@/pages/SmokeDetectionPage';
+import LearnersPage from '@/pages/LearnersPage';
+import MentorsPage from '@/pages/MentorsPage';
 
 function App() {
   return (
@@ -91,8 +93,10 @@ function App() {
           <Route path="/emledgeai" element={<EmbeddedMLPage />} />
           <Route path="/embeddedproduct" element={<EmbeddedProductPage />} />
           <Route path="/embeddedinternship" element={<EmbeddedInternship />} />
-           <Route path="/embeddedaerospace" element={<EmbeddedAerospacePage />} /> 
+          <Route path="/embeddedaerospace" element={<EmbeddedAerospacePage />} /> 
           <Route path="/smokedetection" element={<SmokeDetectionPage />} />
+          <Route path="/learners" element={<LearnersPage />} />
+          <Route path="/mentors" element={<MentorsPage />} />
         </Routes>
       </Layout>
       <Toaster />

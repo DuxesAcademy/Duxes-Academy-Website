@@ -47,25 +47,25 @@ const Header = () => {
   };
 
   const handleNavigation = (id) => {
-  if (location.pathname !== "/") {
-    navigate("/");
-    setTimeout(() => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
       const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
-    }, 100);
-  } else {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
     }
-  }
 
-  setAboutOpen(false);
-  setMobileAboutOpen(false);
-  setMobileMenuOpen(false);
-};
+    setAboutOpen(false);
+    setMobileAboutOpen(false);
+    setMobileMenuOpen(false);
+  };
 
 
   const renderUserMenu = () => (
@@ -158,17 +158,36 @@ const Header = () => {
 
               <div className={`absolute left-1/2 -translate-x-1/2 mt-3 w-56 bg-white text-black rounded-xl shadow-xl py-3 transition-all duration-300
                 ${aboutOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-3 invisible"}`}>
-                {["workflow","why-us","community","tools-tech","blogs"].map((id, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handleNavigation(id)}
-                    className="block w-full text-left px-4 py-2 hover:bg-gray-100 transition"
-                  >
-                    {id === "tools-tech" ? "Tools & Technology" :
-                     id === "why-us" ? "Why Us" :
-                     id === "blogs" ? "Blogs" :
-                     id.charAt(0).toUpperCase() + id.slice(1)}
-                  </button>
+                {["workflow", "why-us", "learners", "mentors", "blogs"].map((id, index) => (
+                  id === "learners" ? (
+                    <Link
+                      key={index}
+                      to="/learners"
+                      onClick={scrollToTop}
+                      className="block w-full text-left px-4 py-2 hover:bg-gray-100 transition"
+                    >
+                      Learners
+                    </Link>
+                  ) : id === "mentors" ? (
+                    <Link
+                      key={index}
+                      to="/mentors"
+                      onClick={scrollToTop}
+                      className="block w-full text-left px-4 py-2 hover:bg-gray-100 transition"
+                    >
+                      Mentors
+                    </Link>
+                  ) : (
+                    <button
+                      key={index}
+                      onClick={() => handleNavigation(id)}
+                      className="block w-full text-left px-4 py-2 hover:bg-gray-100 transition"
+                    >
+                      {id === "why-us" ? "Why Us" :
+                        id === "blogs" ? "Blogs" :
+                          id.charAt(0).toUpperCase() + id.slice(1)}
+                    </button>
+                  )
                 ))}
               </div>
             </div>
@@ -226,17 +245,36 @@ const Header = () => {
                 <div
                   className={`overflow-hidden transition-all duration-300 ease-in-out ${mobileAboutOpen ? "max-h-60 opacity-100 mt-2" : "max-h-0 opacity-0"}`}
                 >
-                  {["workflow","why-us","community","tools-tech","blogs"].map((id, index) => (
-                    <button
-                      key={index}
-                      onClick={() => handleNavigation(id)}
-                      className="block w-full text-left pl-6 pr-2 py-2 text-sm hover:bg-gray-100 rounded-md transition"
-                    >
-                      {id === "tools-tech" ? "Tools & Technology" :
-                       id === "why-us" ? "Why Us" :
-                       id === "blogs" ? "Blogs" :
-                       id.charAt(0).toUpperCase() + id.slice(1)}
-                    </button>
+                  {["workflow", "why-us", "learners", "mentors", "blogs"].map((id, index) => (
+                    id === "learners" ? (
+                      <Link
+                        key={index}
+                        to="/learners"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block w-full text-left pl-6 pr-2 py-2 text-sm hover:bg-gray-100 rounded-md transition"
+                      >
+                        Learners
+                      </Link>
+                    ) : id === "mentors" ? (
+                      <Link
+                        key={index}
+                        to="/mentors"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block w-full text-left pl-6 pr-2 py-2 text-sm hover:bg-gray-100 rounded-md transition"
+                      >
+                        Mentors
+                      </Link>
+                    ) : (
+                      <button
+                        key={index}
+                        onClick={() => handleNavigation(id)}
+                        className="block w-full text-left pl-6 pr-2 py-2 text-sm hover:bg-gray-100 rounded-md transition"
+                      >
+                        {id === "why-us" ? "Why Us" :
+                          id === "blogs" ? "Blogs" :
+                            id.charAt(0).toUpperCase() + id.slice(1)}
+                      </button>
+                    )
                   ))}
                 </div>
               </div>
