@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const LearnersPage = () => {
 
-    const scriptURL = "https://script.google.com/macros/s/AKfycbzwDXGjuhEce4UIab33wyYxQ2P9UI7GdbLZKCei9QvdZd_OPvtAheHVnjXSApxswZqqcQ/exec";
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwezkRF_0zTpfqVgBAFE0TosvwD5WoQ2TOiSVj5tIYWx4jH1YgQPKptmffSJD9FY86u/exec";
 
     const [formData, setFormData] = useState({
         name: "",
@@ -44,11 +44,10 @@ const LearnersPage = () => {
 
         if (Object.keys(newErrors).length > 0) {
             setShake(true);
-            setTimeout(() => setShake(false), 500);
+            setTimeout(() => setShake(false), 400);
         }
 
         return Object.keys(newErrors).length === 0;
-
     };
 
     const handleChange = (e) => {
@@ -114,7 +113,7 @@ const LearnersPage = () => {
 
                 </div>
 
-                <div className={`w-full max-w-md md:max-w-[640px] bg-white p-6 shadow-xl rounded-md transition ${shake ? "animate-[shake_0.4s]" : ""}`}>
+                <div className={`w-full max-w-md md:max-w-[640px] bg-white p-6 shadow-xl rounded-md ${shake ? "animate-[shake_0.4s]" : ""}`}>
 
                     <h2 className="text-3xl font-semibold mb-2">
                         Learner Registration
@@ -123,20 +122,6 @@ const LearnersPage = () => {
                     <p className="text-gray-500 mb-6">
                         Tell us about your interests and we will guide you.
                     </p>
-
-                    {loading && (
-                        <div className="flex items-center gap-2 text-[#10899A] mb-4">
-                            <div className="w-4 h-4 border-2 border-[#10899A] border-t-transparent rounded-full animate-spin"></div>
-                            <span>Submitting...</span>
-                        </div>
-                    )}
-
-                    {success && (
-                        <div className="flex items-center gap-2 text-green-600 mb-4">
-                            <span className="text-xl">✔</span>
-                            <span>Form submitted successfully</span>
-                        </div>
-                    )}
 
                     <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
@@ -150,7 +135,13 @@ const LearnersPage = () => {
                                 required
                                 className="peer w-full border-b border-gray-400 focus:border-[#10899A] outline-none py-2"
                             />
-                            <label className="absolute left-0 -top-3 text-sm text-gray-500 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-3 peer-focus:text-sm">
+
+                            <label className="absolute left-0 -top-3 text-sm text-gray-500 transition-all
+peer-placeholder-shown:top-2
+peer-placeholder-shown:text-base
+peer-placeholder-shown:text-gray-400
+peer-focus:-top-3
+peer-focus:text-sm">
                                 Your Name
                             </label>
                         </div>
@@ -165,9 +156,16 @@ const LearnersPage = () => {
                                 required
                                 className="peer w-full border-b border-gray-400 focus:border-[#10899A] outline-none py-2"
                             />
-                            <label className="absolute left-0 -top-3 text-sm text-gray-500 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-3 peer-focus:text-sm">
+
+                            <label className="absolute left-0 -top-3 text-sm text-gray-500 transition-all
+peer-placeholder-shown:top-2
+peer-placeholder-shown:text-base
+peer-placeholder-shown:text-gray-400
+peer-focus:-top-3
+peer-focus:text-sm">
                                 Your Email
                             </label>
+
                             {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
                         </div>
 
@@ -179,11 +177,18 @@ const LearnersPage = () => {
                                 value={formData.phone}
                                 onChange={handleChange}
                                 required
-                                className="peer w-full border-b border-gray-400 focus:border-[#10899A] outline-none py-2 placeholder-transparent"
+                                className="peer w-full border-b border-gray-400 focus:border-[#10899A] outline-none py-2"
                             />
-                           <label className="absolute left-0 -top-3 text-sm text-gray-500 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-3 peer-focus:text-sm">
+
+                            <label className="absolute left-0 -top-3 text-sm text-gray-500 transition-all
+peer-placeholder-shown:top-2
+peer-placeholder-shown:text-base
+peer-placeholder-shown:text-gray-400
+peer-focus:-top-3
+peer-focus:text-sm">
                                 Your Mobile
                             </label>
+
                             {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
                         </div>
 
@@ -199,17 +204,21 @@ const LearnersPage = () => {
 
                             {statusOpen && (
                                 <div className="absolute left-0 w-full bg-white shadow-md mt-1 z-50">
-                                    <div className="px-3 py-2 hover:bg-gray-100 cursor-pointer"
+
+                                    <div
+                                        className="px-3 py-2 hover:bg-gray-100 cursor-pointer"
                                         onClick={() => { setFormData({ ...formData, status: "Student" }); setStatusOpen(false); }}>
                                         Student
                                     </div>
-                                    <div className="px-3 py-2 hover:bg-gray-100 cursor-pointer"
+
+                                    <div
+                                        className="px-3 py-2 hover:bg-gray-100 cursor-pointer"
                                         onClick={() => { setFormData({ ...formData, status: "Working Professional" }); setStatusOpen(false); }}>
                                         Working Professional
                                     </div>
+
                                 </div>
                             )}
-
                         </div>
 
                         <div
@@ -224,6 +233,7 @@ const LearnersPage = () => {
 
                             {programOpen && (
                                 <div className="absolute left-0 w-full bg-white shadow-md mt-1 z-50">
+
                                     {["Internship", "Course", "Workshop", "Project"].map(item => (
                                         <div
                                             key={item}
@@ -232,9 +242,9 @@ const LearnersPage = () => {
                                             {item}
                                         </div>
                                     ))}
+
                                 </div>
                             )}
-
                         </div>
 
                         <textarea
@@ -246,7 +256,7 @@ const LearnersPage = () => {
                             className="md:col-span-2 w-full border-b border-gray-400 focus:border-[#10899A] outline-none py-2"
                         />
 
-                        <div className="md:col-span-2 flex justify-center mt-4">
+                        <div className="md:col-span-2 flex flex-col items-center mt-4">
 
                             <button
                                 type="submit"
@@ -255,6 +265,13 @@ const LearnersPage = () => {
                             >
                                 {loading ? "Submitting..." : "Submit"}
                             </button>
+
+                            {success && (
+                                <div className="flex items-center justify-center gap-2 text-green-600 mt-3">
+                                    <span className="text-lg">✔</span>
+                                    <span>Form submitted successfully</span>
+                                </div>
+                            )}
 
                         </div>
 
@@ -267,7 +284,6 @@ const LearnersPage = () => {
         </div>
 
     );
-
 };
 
 export default LearnersPage;
