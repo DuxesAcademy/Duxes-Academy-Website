@@ -101,8 +101,6 @@ const MentorsPage = () => {
 
             <div className="relative z-10 w-full flex flex-col md:flex-row justify-between items-center px-6 md:px-16 py-12 gap-10">
 
-                {/* LEFT TEXT */}
-
                 <div className="text-white max-w-lg text-center md:text-left">
 
                     <h1 className="text-3xl md:text-5xl font-bold mb-4">
@@ -115,8 +113,6 @@ const MentorsPage = () => {
 
                 </div>
 
-                {/* FORM CARD */}
-
                 <div className={`w-full max-w-md md:max-w-[640px] bg-white p-6 shadow-xl rounded-md ${shake ? "animate-[shake_0.3s]" : ""}`}>
 
                     <h2 className="text-3xl font-semibold mb-2">
@@ -127,27 +123,7 @@ const MentorsPage = () => {
                         Join our mentor network and support learners.
                     </p>
 
-                    {/* Spinner */}
-
-                    {loading && (
-                        <div className="flex items-center gap-2 text-[#10899A] mb-4">
-                            <div className="w-4 h-4 border-2 border-[#10899A] border-t-transparent rounded-full animate-spin"></div>
-                            Submitting...
-                        </div>
-                    )}
-
-                    {/* Success */}
-
-                    {success && (
-                        <div className="flex items-center gap-2 text-green-600 mb-4">
-                            <span>✔</span>
-                            Form submitted successfully
-                        </div>
-                    )}
-
                     <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-                        {/* NAME */}
 
                         <div className="relative">
                             <input
@@ -169,8 +145,6 @@ peer-focus:text-sm transition-all">
                                 Name
                             </label>
                         </div>
-
-                        {/* EMAIL */}
 
                         <div className="relative">
                             <input
@@ -195,8 +169,6 @@ peer-focus:text-sm transition-all">
                             {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
                         </div>
 
-                        {/* PHONE */}
-
                         <div className="relative">
                             <input
                                 type="tel"
@@ -220,8 +192,6 @@ peer-focus:text-sm transition-all">
                             {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
                         </div>
 
-                        {/* QUALIFICATION */}
-
                         <div className="relative">
                             <input
                                 type="text"
@@ -242,8 +212,6 @@ peer-focus:text-sm transition-all">
                                 Qualification
                             </label>
                         </div>
-
-                        {/* EXPERIENCE */}
 
                         <div className="relative">
                             <input
@@ -266,8 +234,6 @@ peer-focus:text-sm transition-all">
                             </label>
                         </div>
 
-                        {/* EXPERTISE */}
-
                         <div className="relative">
                             <input
                                 type="text"
@@ -289,8 +255,6 @@ peer-focus:text-sm transition-all">
                             </label>
                         </div>
 
-                        {/* WORK MODE */}
-
                         <div
                             className="relative"
                             onMouseEnter={() => setModeOpen(true)}
@@ -308,8 +272,7 @@ peer-focus:text-sm transition-all">
                                         <div
                                             key={item}
                                             className="px-3 py-2 hover:bg-gray-100 cursor-pointer"
-                                            onClick={() => { setFormData({ ...formData, mode: item }); setModeOpen(false); }}
-                                        >
+                                            onClick={() => { setFormData({ ...formData, mode: item }); setModeOpen(false); }}>
                                             {item}
                                         </div>
                                     ))}
@@ -319,9 +282,7 @@ peer-focus:text-sm transition-all">
 
                         </div>
 
-                        {/* BUTTON */}
-
-                        <div className="md:col-span-2 flex justify-center mt-4">
+                        <div className="md:col-span-2 flex flex-col items-center mt-4">
 
                             <button
                                 type="submit"
@@ -330,6 +291,13 @@ peer-focus:text-sm transition-all">
                             >
                                 {loading ? "Submitting..." : "Submit"}
                             </button>
+
+                            {success && (
+                                <div className="flex items-center justify-center gap-2 text-green-600 mt-3">
+                                    <span className="text-lg">✔</span>
+                                    <span>Form submitted successfully</span>
+                                </div>
+                            )}
 
                         </div>
 
