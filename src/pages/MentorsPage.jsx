@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const MentorsPage = () => {
 
-    const scriptURL = "https://script.google.com/macros/s/AKfycbwPkv56gvwaBTk42dSE0tYNe9UJyG3k6K-tQ9hDdr5r9OJTnhuxhbjUGIKT4p_hEY7v/exec";
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxdV3RO-l7GAdc2Ztp6EuUlo4yCM6GiMD4XXua_ktuJjUTs2B6Q7oI1z9Qvfx6y22sY6A/exec";
 
     const [formData, setFormData] = useState({
         name: "",
